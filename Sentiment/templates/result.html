@@ -4,21 +4,74 @@
   <meta charset="UTF-8">
   <title>Sentiment Result</title>
   <style>
-    body { font-family: Arial; text-align: center; padding: 50px; }
-    .result { font-size: 24px; font-weight: bold; padding: 20px; margin: 20px; }
-    .details { margin-top: 20px; }
-    a { text-decoration: none; color: #333; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e9f2f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .result {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+      animation: pop 0.5s ease;
+    }
+
+    .details {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2196F3;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background: #1976D2;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <h1>Analysis Result</h1>
-  <div class="result" style="color: white; background-color: {{ color }};">
-    {{ result }}
+  <div class="container">
+    <h1>🔍 Sentiment Result</h1>
+    <div class="result" style="background-color: {{ color }};">
+      {{ result }}
+    </div>
+    <div class="details">
+      <p><strong>Input Text:</strong><br>{{ text }}</p>
+      <p>Positive: {{ positive }} | Neutral: {{ neutral }} | Negative: {{ negative }}</p>
+    </div>
+    <a href="/">🔁 Analyze Another</a>
   </div>
-  <div class="details">
-    <p><strong>Input Text:</strong> {{ text }}</p>
-    <p>Positive: {{ positive }}, Neutral: {{ neutral }}, Negative: {{ negative }}</p>
-  </div>
-  <a href="/">🔙 Analyze another</a>
 </body>
 </html>
