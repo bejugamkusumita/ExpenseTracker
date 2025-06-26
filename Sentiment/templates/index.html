@@ -1,19 +1,71 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Sentiment Analyzer</title>
   <style>
-    body { font-family: Arial; text-align: center; padding: 50px; }
-    textarea { width: 80%; height: 100px; }
-    button { padding: 10px 20px; font-size: 16px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
   </style>
 </head>
 <body>
-  <h1>🌟 Sentiment Analysis Tool</h1>
-  <form method="POST" action="/analyze">
-    <textarea name="text" placeholder="Enter text to analyze..."></textarea><br><br>
-    <button type="submit">Analyze</button>
-  </form>
+  <div class="container">
+    <h1>🌟 Sentiment Analysis Tool</h1>
+    <form method="POST" action="/analyze">
+      <textarea name="text" placeholder="Enter text to analyze..."></textarea><br>
+      <button type="submit">Analyze</button>
+    </form>
+  </div>
 </body>
 </html>
