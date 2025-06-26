@@ -1,1 +1,3 @@
-vaderSentiment
+Flask==2.3.3
+vaderSentiment==3.3.2
+gunicorn==21.2.0
