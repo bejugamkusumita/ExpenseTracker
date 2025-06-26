@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sentiment Result</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; }
+    .result { font-size: 24px; font-weight: bold; padding: 20px; margin: 20px; }
+    .details { margin-top: 20px; }
+    a { text-decoration: none; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Analysis Result</h1>
+  <div class="result" style="color: white; background-color: {{ color }};">
+    {{ result }}
+  </div>
+  <div class="details">
+    <p><strong>Input Text:</strong> {{ text }}</p>
+    <p>Positive: {{ positive }}, Neutral: {{ neutral }}, Negative: {{ negative }}</p>
+  </div>
+  <a href="/">🔙 Analyze another</a>
+</body>
+</html>
